@@ -35,7 +35,8 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(
               child: FutureBuilder<List<ModelPokemons>>(
                   future: _listadoPokemons,
-                  builder: (context, snapshot) {
+                  builder:
+                      (BuildContext context, AsyncSnapshot<List> snapshot) {
                     if (snapshot.hasData) {
                       return PageView.builder(
                           scrollDirection: Axis.horizontal,
@@ -56,10 +57,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(
                 child: FutureBuilder<List<ModelPokemons>>(
               future: _listadoPokemons,
-              builder: (context, snapshot) {
+              builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
                 if (snapshot.hasData) {
                   return Swiper(
-                    itemCount: 3,
+                    itemCount: snapshot.data!.length,
                     pagination: const SwiperPagination(),
                     control: const SwiperControl(),
                     itemBuilder: (context, index) {

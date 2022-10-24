@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:pokeapp/models/Model_pokemons.dart';
 
 class PokemonProvider {
-  final url = "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0";
+  final url = "https://pokeapi.co/api/v2/pokemon?limit=10&offset=0";
   final List pokemonList = [];
 
   Future<List<ModelPokemons>> getPokemons() async {

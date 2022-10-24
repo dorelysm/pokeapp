@@ -10,7 +10,12 @@ class PokeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: <Widget>[Text(poke.name), Image.network(poke.url)],
+      children: <Widget>[
+        Text(poke.name),
+        Image(
+          image: NetworkImage(poke.url),
+        )
+      ],
     );
   }
 }
